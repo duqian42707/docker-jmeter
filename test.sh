@@ -13,7 +13,7 @@ export TARGET_KEYWORD="Kaartdiensten"
 
 T_DIR=./tests/trivial
 NAME="jmeter"
-IMAGE="registry.cn-hangzhou.aliyuncs.com/duqian/docker-jmeter:5.3"
+IMAGE="duqian/jmeter:5.3"
 
 # Reporting dir: start fresh
 R_DIR=${T_DIR}/report
