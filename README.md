@@ -30,8 +30,7 @@ NB **IMAGE_TIMEZONE** setting is not working yet.
 The Docker image will accept the same parameters as ``jmeter`` itself, assuming
 you run JMeter non-GUI with ``-n``.
 
-There is a shorthand [run.sh](run.sh) command.
-See [test.sh](test.sh) for an example of how to call [run.sh](run.sh).
+See [test.sh](test.sh) for an example.
 
 ## User Defined Variables
 
@@ -39,8 +38,7 @@ This is a standard facility of JMeter: settings in a JMX test script
 may be defined symbolically and substituted at runtime via the commandline.
 These are called JMeter User Defined Variables or UDVs.
 
-See [test.sh](test.sh) and the [trivial test plan](tests/trivial/test-plan.jmx) for an example of UDVs passed to the Docker 
-image via [run.sh](run.sh).
+See [test.sh](test.sh) and the [trivial test plan](tests/trivial/test-plan.jmx) for an example.
 
 See also: http://blog.novatec-gmbh.de/how-to-pass-command-line-properties-to-a-jmeter-testplan/
 
@@ -76,8 +74,6 @@ Contribution by @wilsonmar
    ```
    ./test.sh
    ```
-
-   If you view the script, note it invokes the <strong>run.sh</strong> script file stored at the repo's root. View that file to see that it specifies docker image commands.
    
    File and folder names specified in the test.sh script is reflected in the last line in the response for its run:
 
@@ -132,7 +128,7 @@ from http://mirror.serversupportforum.de/apache/jmeter/binaries within the Docke
 A generic [entrypoint.sh](entrypoint.sh) is copied into the Docker image and
 will be the script that is run when the Docker container is run. The
 [entrypoint.sh](entrypoint.sh) simply calls ``jmeter`` passing all argumets provided
-to the Docker container, see [run.sh](run.sh) script:
+to the Docker container, see [test.sh](test.sh) script:
 
 ```
 sudo docker run --name ${NAME} -i -v ${WORK_DIR}:${WORK_DIR} -w ${WORK_DIR} ${IMAGE} $@
